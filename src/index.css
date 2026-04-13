@@ -38,7 +38,7 @@
   .badge-retailer { @apply badge bg-blue-50 text-blue-700 border border-blue-100; }
   .badge-wholesaler { @apply badge bg-amber-50 text-amber-700 border border-amber-100; }
   .badge-free { @apply badge bg-ink-100 text-ink-500; }
-  .badge-pro { @apply badge bg-saffron-50 text-saffron-600 border border-saffron-200; }
+  .badge-pro { @apply badge bg-saffron-50 text-saffron-600 border border-saffron-500; }
   .badge-premium { @apply badge bg-violet-50 text-violet-700 border border-violet-200; }
   .badge-admin { @apply badge bg-ink-900 text-white; }
   .glass { @apply bg-white/60 backdrop-blur-md border border-white/80; }
@@ -84,4 +84,4 @@ html { scroll-behavior: smooth; }
   content: '|';
   animation: blink 1s step-end infinite;
 }
-@keyframes blink { '0%,100%': { opacity: 1 } '50%': { opacity: 0 } }
+@keyframes blink { 0%,100% { opacity: 1 } 50% { opacity: 0 } }
