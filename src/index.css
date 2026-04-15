@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body { background:#fdf8f2; color:#1a1108; font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; }
+  html { scroll-behavior:smooth; }
+}
+
+@layer components {
+  /* Buttons */
+  .btn { @apply inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none; }
+  .btn-primary { @apply btn bg-s-500 hover:bg-s-600 text-white px-6 py-3 rounded-2xl shadow-lg shadow-s-500/25 hover:shadow-xl hover:shadow-s-500/35 hover:-translate-y-0.5 active:translate-y-0; }
+  .btn-dark { @apply btn bg-k-900 hover:bg-k-800 text-white px-6 py-3 rounded-2xl shadow-lg hover:-translate-y-0.5; }
+  .btn-ghost { @apply btn border-2 border-k-200 text-k-700 hover:border-s-400 hover:text-s-600 hover:bg-s-50 px-6 py-3 rounded-2xl; }
+  .btn-violet { @apply btn bg-v-500 hover:bg-v-600 text-white px-5 py-2.5 rounded-xl shadow-lg shadow-v-500/25 hover:-translate-y-0.5; }
+  .btn-sm { @apply px-4 py-2 text-sm rounded-xl; }
+
+  /* Cards */
+  .card { @apply bg-white rounded-3xl border border-k-100 shadow-sm; }
+  .card-hover { @apply card cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-k-900/8 hover:border-k-200; }
+  .glass { @apply bg-white/70 backdrop-blur-xl border border-white/60 rounded-3xl; }
+
+  /* Form */
+  .input { @apply w-full px-4 py-3.5 rounded-2xl border border-k-200 bg-white focus:outline-none focus:ring-2 focus:ring-s-400/40 focus:border-s-400 text-k-900 placeholder:text-k-300 transition-all duration-200 text-sm; }
+  .label { @apply block text-xs font-bold text-k-500 uppercase tracking-widest mb-2; }
+
+  /* Badges */
+  .badge { @apply inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full; }
+  .badge-r { @apply badge bg-blue-50 text-blue-700 border border-blue-200; }
+  .badge-w { @apply badge bg-amber-50 text-amber-700 border border-amber-200; }
+  .badge-free { @apply badge bg-k-100 text-k-500 border border-k-200; }
+  .badge-pro { @apply badge bg-s-50 text-s-600 border border-s-200; }
+  .badge-premium { @apply badge bg-v-50 text-v-600 border border-v-100; }
+  .badge-ai { @apply badge bg-v-50 text-v-600 border border-v-100; }
+
+  /* Layout */
+  .wrap { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* Shimmer skeleton */
+  .skel { background:linear-gradient(90deg,#f0ebe0 25%,#e8ddd0 50%,#f0ebe0 75%); background-size:200% 100%; @apply animate-shimmer rounded-2xl; }
+
+  /* AI gradient text */
+  .ai-text { background:linear-gradient(135deg,#8b5cf6 0%,#f97316 50%,#8b5cf6 100%); background-size:200% auto; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:shimmer 3s linear infinite; }
+
+  /* Hover glow on cards */
+  .glow-hover { transition:box-shadow 0.3s ease; }
+  .glow-hover:hover { box-shadow:0 0 0 2px rgba(249,115,22,0.3), 0 20px 40px rgba(249,115,22,0.1); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width:4px; height:4px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:#e0d5c0; border-radius:4px; }
+::-webkit-scrollbar-thumb:hover { background:#c4a882; }
+.no-sb::-webkit-scrollbar { display:none; }
+.no-sb { -ms-overflow-style:none; scrollbar-width:none; }
+
+/* Stagger delays */
+.d1{animation-delay:.1s} .d2{animation-delay:.2s} .d3{animation-delay:.3s} .d4{animation-delay:.4s} .d5{animation-delay:.5s}
+
+/* Animated underline on links */
+.u-link { position:relative; }
+.u-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#f97316; transition:width .3s ease; border-radius:1px; }
+.u-link:hover::after { width:100%; }
+
+/* Pulse dot */
+.pulse-dot { width:8px; height:8px; background:#10b981; border-radius:50%; box-shadow:0 0 0 0 rgba(16,185,129,0.4); animation:pulse-ring 2s ease-in-out infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 rgba(16,185,129,0.4)} 70%{box-shadow:0 0 0 8px rgba(16,185,129,0)} 100%{box-shadow:0 0 0 0 rgba(16,185,129,0)} }
